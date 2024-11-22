@@ -1,10 +1,10 @@
-package org.example.chessItem;
+package org.example.chessItem.util;
+
+import org.example.chessItem.board.ChessBoard;
 
 public interface RookMove {
     default boolean canMoveStraight(ChessBoard chessBoard, int line, int column, int toLine, int toColumn) {
-        if (line == toLine || column == toColumn) {
-            return true;
-        }
-    return false;
+
+        return line == toLine || column == toColumn;
     }
 }

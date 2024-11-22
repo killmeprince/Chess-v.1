@@ -1,4 +1,8 @@
-package org.example.chessItem;
+package org.example.chessItem.pieces;
+
+import org.example.chessItem.board.ChessBoard;
+
+import org.example.chessItem.board.Color;
 
 public class King extends ChessPiece {
     public King(Color color) {
@@ -21,6 +25,7 @@ public class King extends ChessPiece {
         }
         return false;
     }
+
 
     @Override
     public String getSymbol() {

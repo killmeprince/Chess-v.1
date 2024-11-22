@@ -1,6 +1,12 @@
-package org.example.chessItem;
+package org.example.chessItem.pieces;
 
-public class Queen extends ChessPiece implements BishopMove, RookMove{
+import org.example.chessItem.board.ChessBoard;
+
+import org.example.chessItem.board.Color;
+import org.example.chessItem.util.BishopMove;
+import org.example.chessItem.util.RookMove;
+
+public class Queen extends ChessPiece implements BishopMove, RookMove {
     public Queen(Color color) {
         super(color);
     }

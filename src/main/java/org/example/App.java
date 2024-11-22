@@ -1,6 +1,9 @@
 package org.example;
 
-import org.example.chessItem.*;
+import org.example.chessItem.board.ChessBoard;
+import org.example.chessItem.board.Color;
+import org.example.chessItem.board.GameState;
+import org.example.chessItem.pieces.*;
 
 import java.util.Scanner;
 
@@ -46,7 +49,7 @@ public class App {
                'replay' - для перезапуска игры
                'castling0' или 'castling7' - для рокировки по соответствующей стороне
                'move 1 1 2 3' - для перемещения фигуры с позиции 1 1 на 2 3 (поле — это двумерный массив от 0 до 7)
-               Проверьте: могут ли фигуры ходить сквозь друг друга, корректно ли они съедают другие фигуры, можно ли сделать рокировку и т.д.""");
+               """);
         System.out.println();
         board.printBoard();
 

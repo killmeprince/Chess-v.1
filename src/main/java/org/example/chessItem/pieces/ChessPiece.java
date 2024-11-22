@@ -1,9 +1,12 @@
-package org.example.chessItem;
+package org.example.chessItem.pieces;
 
-abstract class ChessPiece {
+import org.example.chessItem.board.ChessBoard;
+import org.example.chessItem.board.Color;
+
+public abstract class ChessPiece {
 
     protected Color color;
-    boolean check = true;
+    public boolean check = true;
 
     ChessPiece(Color color) {
         this.color = color;
@@ -21,6 +24,7 @@ abstract class ChessPiece {
         }
         return false;
     }
+
 
     public boolean checkAll(ChessBoard chessBoard, int line, int column, int toLine, int toColumn) {
         if (!chessBoard.checkPos(line) || !chessBoard.checkPos(column) ||

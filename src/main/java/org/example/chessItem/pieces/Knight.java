@@ -1,4 +1,6 @@
-package org.example.chessItem;
+package org.example.chessItem.pieces;
+import org.example.chessItem.board.ChessBoard;
+import org.example.chessItem.board.Color;
 
 public class Knight extends ChessPiece {
 

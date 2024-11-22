@@ -1,4 +1,6 @@
-package org.example.chessItem;
+package org.example.chessItem.util;
+
+import org.example.chessItem.board.ChessBoard;
 
 public interface BishopMove {
     default boolean canMoveDiagonally(ChessBoard chessBoard, int line, int column, int toLine, int toColumn) {
