@@ -170,16 +170,18 @@ public class ChessBoard {
         if (gameState != GameState.RUNNING) {
             return false;
         }
-        ChessPiece king = CHESS_BOARD[0][4];  // К бел
+        ChessPiece king = CHESS_BOARD[0][4];
         ChessPiece rook = CHESS_BOARD[0][0];
 
         if (king instanceof King && rook instanceof Rook) {
             King whiteKing = (King) king;
             Rook whiteRook = (Rook) rook;
 
+
             if (!whiteKing.check || !whiteRook.check) {
                 return false;
             }
+
 
             for (int i = 1; i < 4; i++) {
                 if (CHESS_BOARD[0][i] != null) {
@@ -187,23 +189,30 @@ public class ChessBoard {
                 }
             }
 
+
             if (whiteKing.isUnderAttack(this, 0, 4) ||
                     whiteKing.isUnderAttack(this, 0, 3) ||
                     whiteKing.isUnderAttack(this, 0, 2)) {
                 return false;
             }
 
+
             CHESS_BOARD[0][2] = king;
             CHESS_BOARD[0][3] = rook;
             CHESS_BOARD[0][4] = null;
             CHESS_BOARD[0][0] = null;
+
+
             whiteKing.check = false;
             whiteRook.check = false;
+
+
             switchPlayer();
             return true;
         }
         return false;
     }
+
 
     //short castling (wr > 50%)
     public boolean castling7() {
@@ -220,26 +229,32 @@ public class ChessBoard {
             if (!whiteKing.check || !whiteRook.check) {
                 return false;
             }
+
             if (CHESS_BOARD[0][5] != null || CHESS_BOARD[0][6] != null) {
                 return false;
             }
+
 
             if (whiteKing.isUnderAttack(this, 0, 4) ||
                     whiteKing.isUnderAttack(this, 0, 5) ||
                     whiteKing.isUnderAttack(this, 0, 6)) {
                 return false;
             }
+
             CHESS_BOARD[0][6] = king;
             CHESS_BOARD[0][5] = rook;
             CHESS_BOARD[0][4] = null;
             CHESS_BOARD[0][7] = null;
+
             whiteKing.check = false;
             whiteRook.check = false;
+
             switchPlayer();
             return true;
         }
         return false;
     }
+
 
     public GameState getGameState() {
         return this.gameState;
